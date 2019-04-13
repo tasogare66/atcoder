@@ -1,0 +1,20 @@
+2019-04-02  tasogare66
+
+	* memo:
+	cout<<fixed<<std::setprecision(10)
+
+	* competive:
+	https://qiita.com/AokabiC/items/e9312856f588dd9303ed
+
+	* compile:
+	g++ -std=c++11 -g -O0 aaa.cpp
+
+	* install:
+	sudo apt install build-essential
+
+	sudo apt install gdb
+
+	WSL workspaceFolder入れた。
+	"${command:extension.vscode-wsl-workspaceFolder}", で"${workspaceFolder}" が置き換えられる。/mnt/c/
+
+以上
