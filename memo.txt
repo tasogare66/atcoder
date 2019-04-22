@@ -1,6 +1,23 @@
-2019-04-02  tasogare66
+2019-04-20  tasogare66
 
 	* memo:
+	順列、組み合わせ
+	https://kamino.hatenablog.com/entry/cpp-permutation-combination
+
+2019-04-02  tasogare66
+
+	* index:
+	幅優先探索
+	abc007_c2.cpp
+
+	* memo:
+	テキストをcinに入れれる。
+#if 0
+  	std::ifstream in("input.txt");
+  	std::cin.rdbuf(in.rdbuf());
+#endif
+
+	桁
 	cout<<fixed<<std::setprecision(10)
 
 	* competive:

@@ -9,11 +9,8 @@ int main() {
     if (a.size() >= 2) a[1] = 0;
     if (a.size() >= 3) a[2] = 1;
     for (int i=3;i<n;++i) {
-        a[i] = a[i - 3] + a[i - 2] + a[i - 1];
+        a[i] = (a[i - 3] + a[i - 2] + a[i - 1])%10007;
     }
-    //cout<<a[n-1]%10007<<endl;
-    for(int i=0; i< n; ++i){
-        cout<<i<<":"<<(a[i]%10007)<<endl;
-    }
+    cout<<a[n-1]<<endl;
     return 0;
 }
