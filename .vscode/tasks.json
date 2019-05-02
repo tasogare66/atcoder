@@ -8,11 +8,12 @@
             "command": "g++",
             "type": "shell",
             "args": [
-                "-std=c++11",
+                "-std=c++1y",
                 "-O0",
                 //"-o",
                 //"$(wslpath '${fileDirname}/${fileBasenameNoExtension}')",
                 "-g3",
+                "-DLOCAL",
                 "$(wslpath '${file}')"
                 //"`wslpath '${file}'`",
             ],

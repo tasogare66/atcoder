@@ -4,11 +4,19 @@
 	順列、組み合わせ
 	https://kamino.hatenablog.com/entry/cpp-permutation-combination
 
+	* memo:
+	重複を削除する
+	sort(a2.begin(),a2.end());
+    a2.erase(std::unique(a2.begin(), a2.end()), a2.end());
+
 2019-04-02  tasogare66
 
 	* index:
 	幅優先探索
 	abc007_c2.cpp
+
+	二分探索(binary_search)
+	abc013_c.cpp
 
 	* memo:
 	テキストをcinに入れれる。
