@@ -13,6 +13,7 @@
                 //"-o",
                 //"$(wslpath '${fileDirname}/${fileBasenameNoExtension}')",
                 "-g3",
+                "-fsanitize=undefined",
                 "-DLOCAL",
                 "$(wslpath '${file}')"
                 //"`wslpath '${file}'`",
