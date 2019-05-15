@@ -1,14 +1,16 @@
-//
+//ABC029 A - 複数形
 #include <bits/stdc++.h>
 using namespace std;
 using lli=int64_t;
-template<size_t SIZE, class T> inline size_t array_size(T (&arr)[SIZE]) {
-    return SIZE;
-}
+
 int main() {
 #if LOCAL&0
   	std::ifstream in("input.txt");
   	std::cin.rdbuf(in.rdbuf());
 #endif
+    string W;
+    cin>>W;
+    W += "s";
+    cout<<W<<endl;
     return 0;
 }

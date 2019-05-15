@@ -1,3 +1,22 @@
+2019-05-16  tasogare66
+
+	* precompile:
+	./precompile.sh でprecompile
+
+	-g3 オプションつけるとgch使われなかった。
+
+2019-05-16  tasogare66
+
+	* memo:
+	最大公約数
+	abc_125_c.cpp
+	calc_gdc
+
+	約数の列挙
+	divisor
+	O(√N)
+	diverta2019_d.cpp
+
 2019-04-20  tasogare66
 
 	* memo:

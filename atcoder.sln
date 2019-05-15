@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "atcoder", "atcoder.vcxproj", "{76F33DBE-139C-481D-BD9C-03A8D46D24BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		FullDebug|x64 = FullDebug|x64
+		FullDebug|x86 = FullDebug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76F33DBE-139C-481D-BD9C-03A8D46D24BC}.Debug|x64.ActiveCfg = Debug|x64
+		{76F33DBE-139C-481D-BD9C-03A8D46D24BC}.Debug|x64.Build.0 = Debug|x64
+		{76F33DBE-139C-481D-BD9C-03A8D46D24BC}.Debug|x86.ActiveCfg = Debug|Win32
+		{76F33DBE-139C-481D-BD9C-03A8D46D24BC}.Debug|x86.Build.0 = Debug|Win32
+		{76F33DBE-139C-481D-BD9C-03A8D46D24BC}.FullDebug|x64.ActiveCfg = FullDebug|x64
+		{76F33DBE-139C-481D-BD9C-03A8D46D24BC}.FullDebug|x64.Build.0 = FullDebug|x64
+		{76F33DBE-139C-481D-BD9C-03A8D46D24BC}.FullDebug|x86.ActiveCfg = FullDebug|Win32
+		{76F33DBE-139C-481D-BD9C-03A8D46D24BC}.FullDebug|x86.Build.0 = FullDebug|Win32
+		{76F33DBE-139C-481D-BD9C-03A8D46D24BC}.Release|x64.ActiveCfg = Release|x64
+		{76F33DBE-139C-481D-BD9C-03A8D46D24BC}.Release|x64.Build.0 = Release|x64
+		{76F33DBE-139C-481D-BD9C-03A8D46D24BC}.Release|x86.ActiveCfg = Release|Win32
+		{76F33DBE-139C-481D-BD9C-03A8D46D24BC}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7A30D6F7-A164-4C8D-80CD-843A4FA689AA}
+	EndGlobalSection
+EndGlobal

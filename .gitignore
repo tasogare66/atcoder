@@ -34,3 +34,6 @@
 .vscode/ipch/*
 /test.txt
 /input.txt
+
+/x64
+/.vs

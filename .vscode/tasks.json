@@ -12,11 +12,14 @@
                 "-O0",
                 //"-o",
                 //"$(wslpath '${fileDirname}/${fileBasenameNoExtension}')",
-                "-g3",
+                "-g",
                 "-fsanitize=undefined",
                 "-DLOCAL",
-                "$(wslpath '${file}')"
+                "-I.",
+                "$(wslpath '${file}')",
                 //"`wslpath '${file}'`",
+                //"-H", //使用される個々のヘッダ・ファイルを表示
+                //"-ftime-report",
             ],
             "problemMatcher": [
                 "$gcc"
