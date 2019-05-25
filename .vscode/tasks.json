@@ -13,9 +13,9 @@
                 //"-o",
                 //"$(wslpath '${fileDirname}/${fileBasenameNoExtension}')",
                 "-g",
-                "-fsanitize=undefined",
+                //"-fsanitize=undefined",
                 "-DLOCAL",
-                "-I.",
+                "-I.cache/cxxpch",
                 "$(wslpath '${file}')",
                 //"`wslpath '${file}'`",
                 //"-H", //使用される個々のヘッダ・ファイルを表示
