@@ -1,3 +1,9 @@
+2019-05-27  tasogare66
+
+	* sort:
+	降順、return a.a > b.a;
+	昇順、return a.a < b.a;
+
 2019-05-16  tasogare66
 
 	* precompile:
@@ -16,6 +22,11 @@
 	divisor
 	O(√N)
 	diverta2019_d.cpp
+
+	nCk mod. p
+	http://drken1215.hatenablog.com/entry/2018/06/08/210000
+	1000000007 で割ったあまり
+	https://qiita.com/drken/items/3b4fdf0a78e7a138cd9a
 
 2019-04-20  tasogare66
 

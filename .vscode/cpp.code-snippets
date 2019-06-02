@@ -18,7 +18,7 @@
 			"//AtCoder ",
 			"#include <bits/stdc++.h>",
 			"using namespace std;",
-			"using lli=int64_t;",
+			"using ll=int64_t;",
 			"",
 			"int main() {",
 			"\t$1",
@@ -26,6 +26,23 @@
 			"}"
 		],
 		"description": "main function"
+	},
+	"input_text": {
+		"prefix": "input",
+		"body": [
+			"#if LOCAL&01",
+			"	std::ifstream in(\"input.txt\");",
+			"	std::cin.rdbuf(in.rdbuf());",
+	  		"#endif",
+		],
+		"description": "input text"
+	},
+	"mod primary": {
+		"prefix": "mod",
+		"body": [
+			"constexpr ll MOD=1e9+7;",
+		],
+		"description": "mod primary number"
 	},
 	"string split": {
 		"prefix": "split",
