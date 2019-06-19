@@ -1,3 +1,13 @@
+2019-06-15  tasogare66
+
+	* bitをカウント: gcc拡張
+    auto num = __builtin_popcountll(msk);
+
+	* 桁DP:
+	https://freestylewiki.xyz/fswiki/wiki.cgi?page=%E5%8B%95%E7%9A%84%E8%A8%88%E7%94%BB%E6%B3%95%EF%BC%88%E6%A1%81%EF%BC%A4%EF%BC%B0%EF%BC%89
+	abc007_d.cpp
+	abc129_e.cpp 2進数のやつ
+
 2019-05-27  tasogare66
 
 	* sort:
