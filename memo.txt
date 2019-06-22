@@ -10,6 +10,12 @@
 
 2019-05-27  tasogare66
 
+	* stl:
+	setからvectorのコピー
+	unordered_set<ll> tbl;
+	vector<ll> ans(tbl.size()); //setからvectorのコピー,確保しておく or std::back_inserter(output)
+    std::copy(tbl.begin(), tbl.end(), ans.begin()); //setからvectorのコピー
+
 	* sort:
 	降順、return a.a > b.a;
 	昇順、return a.a < b.a;
@@ -43,6 +49,9 @@
 	* memo:
 	順列、組み合わせ
 	https://kamino.hatenablog.com/entry/cpp-permutation-combination
+
+	組み合わせの列挙
+	abc089_c.cpp
 
 	* memo:
 	重複を削除する
