@@ -16,6 +16,10 @@
 	vector<ll> ans(tbl.size()); //setからvectorのコピー,確保しておく or std::back_inserter(output)
     std::copy(tbl.begin(), tbl.end(), ans.begin()); //setからvectorのコピー
 
+	sortしてuniqueにする。
+	std::sort(vec.begin(), vec.end());
+  	vec.erase(std::unique(vec.begin(), vec.end()), vec.end());
+
 	* sort:
 	降順、return a.a > b.a;
 	昇順、return a.a < b.a;
@@ -86,6 +90,22 @@
 	precompileとか
 	http://koturn.hatenablog.com/entry/2018/07/29/180000
 	https://tokumini.hatenablog.com/
+
+	* test: online judge tools
+	https://github.com/kmyk/online-judge-tools
+	https://kimiyuki.net/blog/2017/01/19/pr-online-judge-tools/
+
+	sudo pip3 install online-judge-tools
+	でいれた。wslから実行
+	更新
+	sudo pip3 install --upgrade online-judge-tools
+
+	oj dl URL
+	oj test(oj t)
+	oj login URL
+
+	./ojdl.sh URL
+	で、testディレクトリのファイル削除して、oj dl して、input.txtも更新する。
 
 	* compile:
 	g++ -std=c++11 -g -O0 aaa.cpp
