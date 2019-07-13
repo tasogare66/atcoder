@@ -15,6 +15,8 @@
                 "-g",
                 //"-fsanitize=undefined",
                 "-DLOCAL",
+                "-Wshadow",
+                "-Wempty-body",
                 "-I.cache/cxxpch",
                 "$(wslpath '${file}')",
                 //"`wslpath '${file}'`",

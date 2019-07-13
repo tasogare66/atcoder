@@ -118,4 +118,7 @@
 	WSL workspaceFolder入れた。
 	"${command:extension.vscode-wsl-workspaceFolder}", で"${workspaceFolder}" が置き換えられる。/mnt/c/
 
+	Meta-snippet for Visual Studio Code入れた。
+	スニペット作成用
+
 以上
