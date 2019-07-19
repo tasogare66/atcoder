@@ -91,6 +91,19 @@
 	http://koturn.hatenablog.com/entry/2018/07/29/180000
 	https://tokumini.hatenablog.com/
 
+	* rake:
+	ソースファイルの先頭にurlのコメントアウトを記述する。
+
+	サンプルケースのダウンロード
+	rake dl_test CPP_SRC=agc024_a.cpp
+	テストの実行
+	rake invoke_test CPP_SRC=agc024_a.cpp
+	ソース提出
+	rake submit CPP_SRC=agc024_a.cpp
+
+	cppのファイルを開いた状態で。
+	vscode CTRL+P > task[space] で、タスクを選択できる。
+
 	* test: online judge tools
 	https://github.com/kmyk/online-judge-tools
 	https://kimiyuki.net/blog/2017/01/19/pr-online-judge-tools/

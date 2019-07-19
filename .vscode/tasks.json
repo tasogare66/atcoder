@@ -42,11 +42,36 @@
             }
         },
         {
-            "label": "Run oj tests",
+            "label": "oj tests",
             "command": "oj",
             "type": "shell",
             "args": [
                 "test",
+            ],
+            "group": {
+                "kind": "test",
+                //"isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                //"panel": "dedicated"
+            },
+            "options": {
+                "shell": {
+                    "executable": "C:\\Windows\\System32\\bash.exe",
+                    "args": [
+                        "-c"
+                    ]
+                }
+            }
+        },
+        {
+            "label": "Run oj tests",
+            "command": "rake",
+            "type": "shell",
+            "args": [
+                "invoke_test",
+                "CPP_SRC=$(wslpath '${file}')",
             ],
             "group": {
                 "kind": "test",
@@ -55,6 +80,43 @@
             "presentation": {
                 "reveal": "always",
                 //"panel": "dedicated"
+            },
+            "options": {
+                "shell": {
+                    "executable": "C:\\Windows\\System32\\bash.exe",
+                    "args": [
+                        "-c"
+                    ]
+                }
+            }
+        },
+        {
+            "label": "Download oj test",
+            "type": "shell",
+            "command": "rake",
+            "args": [
+                "dl_test",
+                "CPP_SRC=$(wslpath '${file}')",
+            ],
+            "options": {
+                "shell": {
+                    "executable": "C:\\Windows\\System32\\bash.exe",
+                    "args": [
+                        "-c"
+                    ]
+                }
+            }
+        },
+        {
+            "label": "Submit src",
+            "type": "shell",
+            "command": "rake",
+            "args": [
+                "submit",
+                "CPP_SRC=$(wslpath '${file}')",
+            ],
+            "presentation": {
+                "focus": true,
             },
             "options": {
                 "shell": {
