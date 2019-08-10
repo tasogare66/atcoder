@@ -35,9 +35,15 @@ int main() {
     PrimeFactorization(test,a);
     //約数の個数
     ll ans=1;
-	for(int i = 2; i <= test; ++i) {
-		ans = ans * (a.at(i) + 1); //それぞれを+1して掛けていく
-	}
+	  for(int i = 2; i <= test; ++i) {
+		  ans = ans * (a.at(i) + 1); //それぞれを+1して掛けていく
+	  }
     cout<<ans<<endl;
+
+    auto r = divisor(16);
+    for(auto v:r){
+      cout<<v<<" ";
+    }
+    cout<<endl;
     return 0;
 }

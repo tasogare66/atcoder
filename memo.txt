@@ -1,5 +1,15 @@
 2019-06-15  tasogare66
 
+	* ARC_A:
+
+	* AGC_A:
+	agc007_a,WAとれず
+	agc017_a
+	agc035_a,嘘解法
+	agc036_a
+
+2019-06-15  tasogare66
+
 	* bitをカウント: gcc拡張
     auto num = __builtin_popcountll(msk);
 
@@ -81,6 +91,10 @@
   	std::ifstream in("input.txt");
   	std::cin.rdbuf(in.rdbuf());
 #endif
+
+	スペースで分割しないで、文字列1行読む場合
+	string s;
+	getline(cin,s);
 
 	桁
 	cout<<fixed<<std::setprecision(10)
