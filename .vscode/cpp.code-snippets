@@ -34,7 +34,10 @@
 			"#if LOCAL&01",
 			"	std::ifstream in(\"./test/sample-1.in\"); //input.txt",
 			"	std::cin.rdbuf(in.rdbuf());",
-	  		"#endif",
+			"#else"
+			"\tcin.tie(0);",
+			"\tios::sync_with_stdio(false);",
+			"#endif",
 		],
 		"description": "input text"
 	},
@@ -60,13 +63,31 @@
 		],
 		"description": "string split"
 	},
-	"mokeke": {
+	"least common multiple": {
 		"prefix": "lcm",
 		"body": [
 			"ll lcm(ll num1,ll num2){",
 			"	return num1 / __gcd(num1,num2) * num2;",
 			"}",
 		],
-		"description": "lcm"
+		"description": "least common multiple"
+	},
+	"cout for float": {
+		"prefix": "cout_float",
+		"body": [
+			"cout<<fixed<<std::setprecision(10)",
+		],
+		"description": "float用のcout"
+	},
+	"debug dump": {
+		"prefix": "dump",
+		"body": [
+			"#if LOCAL",
+			"#include \"dump.hpp\"",
+			"#else",
+			"#define dump(...)",
+			"#endif",
+		],
+		"description": "debug dump"
 	},
 }

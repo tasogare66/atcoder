@@ -28,7 +28,8 @@
                 }
             ],
             "sourceFileMap": {
-                "/mnt/c": "C:\\"
+                "/mnt/c": "C:\\",
+                "/mnt/d": "D:\\"
             }
         },
     ]

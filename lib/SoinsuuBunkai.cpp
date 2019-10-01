@@ -18,26 +18,35 @@ vector< int64_t > divisor(int64_t n) {
 
 //素因数分解
 //n,素因数分解する数
-void PrimeFactorization(ll n, vector<int>& x){
-    ll num=n;
-	//for(int i = 2; i <= n; i++) {
-	for(int i = 2; i <= num; i++) {
-		while(num % i == 0) { //素数で割り切れなくなるまで割っていく
-			x.at(i)++; //割った個数を配列に足す
-			num /= i;
-		}
-	}
+//return first  素数
+//return second いくつ
+//n=5000だと
+//first{2,5} second{3,4} -> 5000=2^3*5^4
+template< typename T >
+std::pair<std::vector<T>, std::vector<T>> prime_factor_decomp(T n) {
+    std::vector<T> p, e;
+    T m = n;
+    for (T i = 2; i * i <= n; i++) {
+        if (m % i != 0) continue;
+        T c = 0;
+        while (m % i == 0) c++, m /= i;
+        p.push_back(i);
+        e.push_back(c);
+    }
+    if (m > 1) {
+        p.push_back(m);
+        e.push_back(1);
+    }
+    return std::make_pair(p, e);
 }
 
 int main() {
     int test=5000;
-    vector<int> a(5000+1,0);
-    PrimeFactorization(test,a);
-    //約数の個数
-    ll ans=1;
-	  for(int i = 2; i <= test; ++i) {
-		  ans = ans * (a.at(i) + 1); //それぞれを+1して掛けていく
-	  }
+    ll ans = 1;
+    auto pe = prime_factor_decomp(test);
+    for(int i=0;i<pe.second.size();++i){
+      ans = ans * (pe.second.at(i) + 1); //それぞれを+1して掛けていく
+    }
     cout<<ans<<endl;
 
     auto r = divisor(16);

@@ -1,6 +1,25 @@
+2019-09-09  tasogare66
+
+	* libalgo
+	https://tubo28.me/compprog/algorithm/
+	https://inzkyk.github.io/algorithms/
+
+	* AOJ:
+	graphの問題
+	https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/4/GRL_4_B
+
 2019-06-15  tasogare66
 
+	* ABC:
+	abc140_e,set、 agc005,setと問題的に近い
+	順列の最小or最大の和
+
 	* ARC_A:
+
+	* AGC_B:
+	agc004_b,微妙に解説AC
+	agc005_b,set
+	agc019_b,算数
 
 	* AGC_A:
 	agc007_a,WAとれず
@@ -84,6 +103,7 @@
 
 	ワーシャルフロイド(warshall_floyd)
 	abc022_c.cpp
+	abc079_d.cpp
 
 	* memo:
 	テキストをcinに入れれる。
