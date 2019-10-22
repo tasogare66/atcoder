@@ -1,3 +1,4 @@
+//https://atcoder.jp/contests/abc032/tasks/abc032_d
 //AtCoder ABC032 D - ナップサック問題
 #include <bits/stdc++.h>
 using namespace std;
@@ -32,8 +33,11 @@ li search(int i, int w){ //重さは引いていく
 
 int main() {
 #if LOCAL&01
-  	std::ifstream in("input.txt");
-  	std::cin.rdbuf(in.rdbuf());
+    std::ifstream in("./test/sample-2.in"); //input.txt
+    std::cin.rdbuf(in.rdbuf());
+#else
+    cin.tie(0);
+    ios::sync_with_stdio(false);
 #endif
     cin>>N>>W;
     vn.resize(N);

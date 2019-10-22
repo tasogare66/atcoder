@@ -4,15 +4,26 @@
 	https://tubo28.me/compprog/algorithm/
 	https://inzkyk.github.io/algorithms/
 
+	https://github.com/ei1333/library
+	graph参考
+
 	* AOJ:
 	graphの問題
 	https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/4/GRL_4_B
+
+	* joi:
+	https://joi.goodbaton.com/
 
 2019-06-15  tasogare66
 
 	* ABC:
 	abc140_e,set、 agc005,setと問題的に近い
 	順列の最小or最大の和
+	abc123_d,半分全列挙
+	abc115_d,再帰,どこまで進んだかで再帰を分岐
+	abc109_d,重複しない移動の方法
+	abc102_d,区間スケジューリング問題
+	abc023_d,最小値の最大化、2分探索(p.132) [arc050_b]
 
 	* ARC_A:
 

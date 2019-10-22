@@ -90,4 +90,36 @@
 		],
 		"description": "debug dump"
 	},
+	"combination": {
+		"prefix": "combination",
+		"body": [
+			"void recursive_comb(vector<ll>& indexes, ll s, ll rest, std::function<void(vector<ll>&)> f) {",
+			"	if (rest == 0) {",
+			"		f(indexes);",
+			"	} else {",
+			"		if (s < 0) return;",
+			"		recursive_comb(indexes, s - 1, rest, f);",
+			"		indexes.at(rest - 1) = s;",
+			"		recursive_comb(indexes, s - 1, rest - 1, f);",
+			"	}",
+			"}",
+			"// nCkの組み合わせに対して処理を実行する",
+			"void foreach_comb(ll n, ll k, std::function<void(vector<ll>&)> f) {",
+			"	vector<ll> indexes(k);",
+			"	recursive_comb(indexes, n - 1, k, f);",
+			"}",
+			"//foreach_comb(N-1, 2, [&](vector<ll>& indexes) {",
+			"//    dump(indexes[0],indexes[1]);",
+			"//}",
+		],
+		"description": "nCkの組み合わせ列挙"
+	},
+	"matrix": {
+		"prefix": "dump",
+		"body": [
+			"template< typename T >",
+			"using Matrix = vector< vector< T > >;",
+		],
+		"description": "matrix"
+	},
 }
