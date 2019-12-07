@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-const int MAX = 510000;
+const int MAX = 510000*10;
 const int MOD = 1000000007;
 long long fac[MAX], finv[MAX], inv[MAX];
 // テーブルを作る前処理

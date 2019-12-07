@@ -9,7 +9,7 @@ using ll=int64_t;
 #include "template_graph.cpp"
 
 //s start node
-//return 各nodeへの最短の距離が入る
+//return 各nodeへの最短の距離が入る,numeric_limits<T>::max()の場合、到達できない
 template< typename T >
 vector< T > dijkstra(const WeightedGraph< T > &g, int s, vector<int>& prev) {
 	const auto INF = numeric_limits<T>::max();

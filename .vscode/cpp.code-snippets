@@ -17,10 +17,17 @@
 		"body": [
 			"//$1",
 			"#include <bits/stdc++.h>",
+			"#if LOCAL",
+			"#include \"dump.hpp\"",
+			"#else",
+			"#define dump(...)",
+			"#endif",
 			"using namespace std;",
-			"using ll=int64_t;",
-			"#define FOR(i,a,b) for(int64_t i=(a);i<(b);++i)",
-			"#define REP(i,n)  FOR(i,0,n)",
+			"using ll=long long;",
+			"#define FOR(i,a,b) for(ll i=(a);i<(b);++i)",
+			"#define REP(i,n) FOR(i,0,n)",
+			"template<class T>bool chmax(T &a, const T &b) {if (a<b) { a=b; return 1; } return 0;}",
+			"template<class T>bool chmin(T &a, const T &b) {if (b<a) { a=b; return 1; } return 0;}",
 			"int main() {",
 			"\t",
 			"    return 0;",
@@ -115,11 +122,29 @@
 		"description": "nCkの組み合わせ列挙"
 	},
 	"matrix": {
-		"prefix": "dump",
+		"prefix": "matrix",
 		"body": [
 			"template< typename T >",
 			"using Matrix = vector< vector< T > >;",
 		],
-		"description": "matrix"
+		"description": "matrix vector2重配列"
+	},
+	"deg2rad": {
+		"prefix": "deg2rad",
+		"body": [
+			"double deg2rad(double deg){",
+			"	return deg*M_PI/180.0;",
+			"}",
+		],
+		"description": "degree to radian"
+	},
+	"rad2deg": {
+		"prefix": "rad2deg",
+		"body": [
+			"double rad2deg(double rad){",
+			"	return rad*180.0/M_PI;",
+			"}",
+		],
+		"description": "radian to degree"
 	},
 }
