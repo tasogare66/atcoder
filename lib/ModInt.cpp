@@ -1,7 +1,50 @@
 //modint, %MODした値を保持する整数
 #include <bits/stdc++.h>
 using namespace std;
+using ll=long long;
 
+#if 01 //こっち,下は負の値のコンストラクタない
+//https://firiexp.github.io/library/library/modint.html
+template<uint32_t M = 1000000007>
+struct modint{
+    using u64 = std::uint_fast64_t;
+    u64 val;
+    modint(): val(0){}
+    template<typename T>
+    modint(T t){t %= (T)M; if(t < 0) t += (T)M; val = t;}
+
+    modint pow(ll k) const {
+        modint res(1), x(val);
+        while(k){
+            if(k&1) res *= x;
+            x *= x;
+            k >>= 1;
+        }
+        return res;
+    }
+    template<typename T>
+    modint& operator=(T t){t %= (T)M; if(t < 0) t += (T)M; val = t; return *this;}
+    modint inv() const {return pow(M-2);}
+    modint& operator+=(modint a){val += a.val; if(val >= M) val -= M; return *this;}
+    modint& operator-=(modint a){if(val < a.val) val += M-a.val; else val -= a.val; return *this;}
+    modint& operator*=(modint a){val = (u64)val*a.val%M; return *this;}
+    modint& operator/=(modint a){return (*this) *= a.inv();}
+    modint operator+(modint a) const {return modint(val) +=a;}
+    modint operator-(modint a) const {return modint(val) -=a;}
+    modint operator*(modint a) const {return modint(val) *=a;}
+    modint operator/(modint a) const {return modint(val) /=a;}
+    modint operator-(){return modint(M-val);}
+    bool operator==(const modint a) const {return val == a.val;}
+    bool operator!=(const modint a) const {return val != a.val;}
+    bool operator<(const modint a) const {return val < a.val;}
+    constexpr u64 &value() noexcept { return val; }
+    constexpr const u64 &value() const noexcept { return val; }
+    friend ostream& operator<<(ostream& os, const modint& dt){
+        os<<dt.val;
+        return os;
+    }
+};
+#else
 template <std::uint_fast64_t Modulus> class modint {
     using u64 = std::uint_fast64_t;
 public:
@@ -55,17 +98,25 @@ public:
         return os;
     }
 };
+#endif
 
-using ll=int64_t;
 constexpr ll MOD=1e9+7;
 using mint = modint<MOD>;
 
 int main() {
-    ll ia=100;
-    ll ib=20;
-    mint a=ia;
-    mint b=ib;
-    cout<<(a+b)<<endl;
-    cout<<(b/a)<<endl;
+    {
+        ll ia=100;
+        ll ib=20;
+        mint a=ia;
+        mint b=ib;
+        cout<<(a+b)<<endl; assert((a+b).value()==120);
+        cout<<(b/a)<<endl; assert((b/a).value()==400000003);
+    }
+    { //引き算
+        mint a=10;
+        mint b=-10;
+        a+=b;
+        cout<<a<<endl; assert(a.value()==0);
+    }
     return 0;
 }

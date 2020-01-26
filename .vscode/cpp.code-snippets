@@ -39,7 +39,8 @@
 		"prefix": "input",
 		"body": [
 			"#if LOCAL&01",
-			"	std::ifstream in(\"./test/sample-1.in\"); //input.txt",
+			"	std::ifstream in(\"./test/sample-1.in\");",
+			"	//std::ifstream in(\"./input.txt\");",
 			"	std::cin.rdbuf(in.rdbuf());",
 			"#else"
 			"\tcin.tie(0);",
@@ -126,6 +127,10 @@
 		"body": [
 			"template< typename T >",
 			"using Matrix = vector< vector< T > >;",
+			"template< typename T>",
+			"Matrix<T> make_matrix(ll y, ll x, T v={}){",
+			"	return Matrix<T>(y, vector<T>(x,v));",
+			"}",
 		],
 		"description": "matrix vector2重配列"
 	},

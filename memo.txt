@@ -179,4 +179,18 @@
 	Meta-snippet for Visual Studio Code入れた。
 	スニペット作成用
 
+	* setup:
+	-ubuntu
+	sudo apt update
+	sudo apt upgrade
+	sudo apt autoremove
+
+	-gcc
+	sudo apt install build-essential
+	sudo apt install gdb
+
+	-online-judge-tools
+	sudo apt install python3-pip
+	sudo pip3 install online-judge-tools
+
 以上

@@ -1,9 +1,17 @@
-//トポロジカルソート,tarjan
+//https://atcoder.jp/contests/dp/tasks/dp_g
+//G - Longest Path
 #include <bits/stdc++.h>
+#if LOCAL
+#include "dump.hpp"
+#else
+#define dump(...)
+#endif
 using namespace std;
-using ll=int64_t;
-#define FOR(i,a,b) for(int64_t i=(a);i<(b);++i)
-#define REP(i,n)  FOR(i,0,n)
+using ll=long long;
+#define FOR(i,a,b) for(ll i=(a);i<(b);++i)
+#define REP(i,n) FOR(i,0,n)
+template<class T>bool chmax(T &a, const T &b) {if (a<b) { a=b; return 1; } return 0;}
+template<class T>bool chmin(T &a, const T &b) {if (b<a) { a=b; return 1; } return 0;}
 
 struct Edge {
     ll st,tr;
@@ -13,6 +21,7 @@ struct Edge {
 };
 struct Node{
     vector<Edge> edges;
+    ll cost=0;
 };
 using Graph = vector<Node>;
 
@@ -42,18 +51,32 @@ vector<ll> tsort_tarjan(Graph& g){
 }
 
 int main() {
-    //aoj_grl_4_b
-    ll vn, en; cin>>vn>>en; //頂点数,辺の数
-    Graph graph(vn);
-    REP(i,en){
-        ll s,t; cin>>s>>t;
-        graph.at(s).edges.emplace_back(s,t);
+#if LOCAL&01
+    std::ifstream in("./test/sample-1.in"); //input.txt
+    std::cin.rdbuf(in.rdbuf());
+#else
+    cin.tie(0);
+    ios::sync_with_stdio(false);
+#endif
+    ll N,M; cin>>N>>M;
+    Graph graph(N+1);
+    REP(i,M){
+        ll x,y; cin>>x>>y;
+        graph.at(x).edges.emplace_back(x,y);
     }
-
     auto ord = tsort_tarjan(graph);
+    dump(ord);
     for(const auto& o:ord){
-        cout<<o<<endl;
+        //cout<<o<<endl;
+        const auto& n=graph.at(o);
+        for(const auto&e: n.edges){
+            chmax(graph.at(e.tr).cost,n.cost+1); 
+        }
     }
-
+    ll ans=0;
+    for(const auto& o:ord){
+        chmax(ans,graph.at(o).cost);
+    }
+    cout<<ans<<endl;
     return 0;
 }
