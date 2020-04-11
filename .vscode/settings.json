@@ -92,4 +92,5 @@
         "xtree": "cpp",
         "concepts": "cpp"
     },
+    "editor.tabSize": 2,
 }

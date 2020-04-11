@@ -13,6 +13,31 @@ using ll=long long;
 template<class T>bool chmax(T &a, const T &b) {if (a<b) { a=b; return 1; } return 0;}
 template<class T>bool chmin(T &a, const T &b) {if (b<a) { a=b; return 1; } return 0;}
 constexpr ll MOD=1e9+7;
+#if 0 //二回目
+int main() {
+  ll N; cin>>N;
+  vector<ll> an(N);
+  for(auto&& a:an) cin>>a;
+  vector<ll> num(3);
+  ll ans=1;
+  for(const auto& a:an){
+    ll mul=0; //みつからないと0になる
+    FOR(i,0,3){
+      if(num[i]==a) ++mul;
+    }
+    FOR(i,0,3){
+      if(num[i]==a) {
+        ++num[i];
+        break;
+      }
+    }
+    ans *= mul;
+    ans %= MOD;
+  }
+  cout<<ans<<endl;
+  return 0;
+}
+#endif
 int main() {
 #if LOCAL&01
     std::ifstream in("./test/sample-1.in"); //input.txt

@@ -2,16 +2,74 @@
 //D - 派閥
 //bitフラグで関係が存在するか全探索
 #include <bits/stdc++.h>
+#if LOCAL
+#include "dump.hpp"
+#else
+#define dump(...)
+#endif
 using namespace std;
-using ll=int64_t;
-#define FOR(i,a,b) for(int64_t i=(a);i<(b);++i)
-#define REP(i,n)  FOR(i,0,n)
+using ll=long long;
+#define FOR(i,a,b) for(ll i=(a);i<(b);++i)
+#define REP(i,n) FOR(i,0,n)
+template<class T>bool chmax(T &a, const T &b) {if (a<b) { a=b; return 1; } return 0;}
+template<class T>bool chmin(T &a, const T &b) {if (b<a) { a=b; return 1; } return 0;}
+
+//dfsこっちのがはやい
+int main() {
+#if LOCAL&01
+    std::ifstream in("./test/sample-1.in");
+    //std::ifstream in("./input.txt");
+    std::cin.rdbuf(in.rdbuf());
+#else
+    cin.tie(0);
+    ios::sync_with_stdio(false);
+#endif
+    ll N, M; cin>>N>>M;
+    vector<pair<ll,ll>> xym(M);
+    vector<map<ll,ll>> pair_map(N);
+    for(auto&& p:xym){
+        ll x,y; cin>>x>>y; --x,--y;
+        if(x>y) swap(x,y);
+        p.first=x;
+        p.second=y;
+        pair_map.at(p.first)[p.second]=1;
+        pair_map.at(p.second)[p.first]=1;
+    }
+
+    function<ll(ll,ll)> search = [&](ll n, ll mask)->ll{
+        if(n>=N) {
+            dump(mask);
+            return __builtin_popcountll(mask);
+        }
+        //n入る?
+        bool flag=true;
+        FOR(i,0,N){
+            if(mask&(1LL<<i)) {
+                if(pair_map.at(n).count(i)<=0){
+                    flag=false;
+                    break;
+                }
+            }
+        }
+        ll ret = search(n+1,mask);
+        if(flag){
+            ret = max(ret,search(n+1,mask|1LL<<n));
+        }
+
+        return ret;
+    };
+
+    cout<<search(0,0)<<endl;
+
+    return 0;
+}
+
 struct Info{
     ll x,y;
     ll flag;
 	Info(ll ix, ll iy) : x(ix), y(iy), flag(1 << ix | 1 << iy) {}
 };
-int main() {
+int main_() {
 #if LOCAL&01
     std::ifstream in("./test/sample-3.in"); //input.txt
     std::cin.rdbuf(in.rdbuf());

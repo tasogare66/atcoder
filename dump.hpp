@@ -4,6 +4,8 @@ template<typename T1,typename T2> void view(ostringstream& os, const pair<T1,T2>
 template<typename T> void view(ostringstream& os, const std::vector<T>& v){for(const auto& e : v){ view(os,e); os<< " "; }}
 template<typename T> void view(ostringstream& os, const std::vector<std::vector<T> >& vv){ os<<endl; for(const auto& v : vv){ view(os,v); os<<endl;} }
 template<typename T> void view(ostringstream& os, const std::deque<T>& v){for(const auto& e : v){ view(os,e); os<< " "; }}
+template<typename T1,typename T2> void view(ostringstream& os, const std::unordered_map<T1,T2>& m){for(const auto& e : m){ view(os,e); os<< " "; }}
+template<typename T1,typename T2> void view(ostringstream& os, const std::map<T1,T2>& m){for(const auto& e : m){ view(os,e); os<< " "; }}
 
 queue<string> argment_contents; //global変数だよ
 void set_args_con() {}

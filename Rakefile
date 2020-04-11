@@ -25,6 +25,7 @@ def check_url_from_log(fname, src_url)
   File.open("#{fname}"){|f|
     url=f.gets
   }
+  url="" if url.nil?
   url.chomp!
   url.strip!
   return !url.eql?(src_url)
@@ -46,7 +47,7 @@ end
 
 desc "テスト用の実行ファイルのビルド"
 file "test.out" => "#{CPP_SRC}" do
-  sh "#{CC} -std=c++1y -O0 -g -I.cache/cxxpch #{CPP_SRC} -o #{TEST_OUT}"
+  sh "#{CC} -std=c++17 -O0 -g -I.cache/cxxpch #{CPP_SRC} -o #{TEST_OUT}"
 end
 
 

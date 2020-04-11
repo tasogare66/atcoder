@@ -1,4 +1,5 @@
 //https://atcoder.jp/contests/abc120/tasks/abc120_d
+//D - Decayed Bridges
 #include <bits/stdc++.h>
 using namespace std;
 using ll=int64_t;

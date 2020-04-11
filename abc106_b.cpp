@@ -1,11 +1,20 @@
-//AtCoder ABC106 B - 105
+//https://atcoder.jp/contests/abc106/tasks/abc106_b
+//B - 105
 #include <bits/stdc++.h>
+#if LOCAL
+#include "dump.hpp"
+#else
+#define dump(...)
+#endif
 using namespace std;
-using ll=int64_t;
-//約数を列挙 O(√N)
-vector< int64_t > divisor(int64_t n) {
-  vector< int64_t > ret;
-  for(int64_t i = 1; i * i <= n; i++) {
+using ll=long long;
+#define FOR(i,a,b) for(ll i=(a);i<(b);++i)
+#define REP(i,n) FOR(i,0,n)
+template<class T>bool chmax(T &a, const T &b) {if (a<b) { a=b; return 1; } return 0;}
+template<class T>bool chmin(T &a, const T &b) {if (b<a) { a=b; return 1; } return 0;}
+vector< ll > divisor(ll n) {
+  vector< ll > ret;
+  for(ll i = 1; i * i <= n; i++) {
     if(n % i == 0) {
       ret.push_back(i);
       if(i * i != n) ret.push_back(n / i);
@@ -17,12 +26,11 @@ vector< int64_t > divisor(int64_t n) {
 int main() {
     ll N; cin>>N;
     ll ans=0;
-    for(ll i=1;i<=N;++i){
-        if (i%2==1){
-            auto tmp = divisor(i);
-            if(tmp.size()==8) ++ans;
-        }
-    }
+    FOR(i,1,N+1){
+        if(i%2==0)continue;
+        auto vec = divisor(i);
+        if(vec.size()==8) ++ans;
+    }    
     cout<<ans<<endl;
     return 0;
 }

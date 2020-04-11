@@ -1,10 +1,80 @@
 //https://atcoder.jp/contests/abc088/tasks/abc088_d
+//D - Grid Repainting
 #include <bits/stdc++.h>
+#if LOCAL
+#include "dump.hpp"
+#else
+#define dump(...)
+#endif
 using namespace std;
-using ll=int64_t;
-#define FOR(i,a,b) for(int64_t i=(a);i<(b);++i)
-#define REP(i,n)  FOR(i,0,n)
+using ll=long long;
+#define FOR(i,a,b) for(ll i=(a);i<(b);++i)
+#define REP(i,n) FOR(i,0,n)
+template<class T>bool chmax(T &a, const T &b) {if (a<b) { a=b; return 1; } return 0;}
+template<class T>bool chmin(T &a, const T &b) {if (b<a) { a=b; return 1; } return 0;}
+//bfsで。
+int main() {
+#if LOCAL&01
+    std::ifstream in("./test/sample-1.in");
+    //std::ifstream in("./input.txt");
+    std::cin.rdbuf(in.rdbuf());
+#else
+    cin.tie(0);
+    ios::sync_with_stdio(false);
+#endif    
+    ll H,W; cin>>H>>W;
+    vector<string> shw(H);
+    for(auto&& s:shw){
+        cin>>s;
+    }
 
+    ll ans = 0;
+    vector<vector<ll>> mat(H,vector<ll>(W,INT32_MIN));
+    FOR(y,0,H){
+        FOR(x,0,W){
+            auto c=shw.at(y).at(x);
+            if(c=='#') mat.at(y).at(x)=-1;
+            else ++ans;
+        }
+    }
+
+    //bfs
+    using pos=pair<ll,ll>; //x,y
+    pos ofs[]={
+        {1,0},{-1,0},{0,-1},{0,1}
+    };
+    auto getmat = [&](const pos& p)->ll&{
+        return mat.at(p.second).at(p.first);
+    };
+    auto available = [&](const pos& p)->bool{
+        if(p.first<0||p.first>=W) return false;
+        if(p.second<0||p.second>=H) return false;
+        return (getmat(p)==INT32_MIN);
+    };
+    queue<pos> que;
+    que.push({0,0});
+    getmat({0,0})=0;
+    while(not que.empty()){
+        auto&d = que.front();
+        que.pop();
+        for(const auto& o:ofs){
+            auto next_p = d;
+            next_p.first += o.first;
+            next_p.second += o.second;
+            if (available(next_p)){
+                getmat(next_p) = getmat(d)+1;
+                que.push(next_p);
+            }
+        }
+    }
+    ll dist = mat.at(H-1).at(W-1);
+    if(dist<0) ans=-1;
+    else ans -= (dist+1);
+    cout<<ans<<endl;
+    return 0;
+}
+
+//dijkstraで。
 struct edge {
     int to, cost;
 	edge(ll _to) : to(_to), cost(1) {}
@@ -55,7 +125,7 @@ vector<int> get_path(int t){ //頂点tへの最短路
     return path;
 }
 
-int main() {
+int main_() {
 #if LOCAL&0
     std::ifstream in("./input.txt"); //input.txt
     std::cin.rdbuf(in.rdbuf());
@@ -120,3 +190,4 @@ int main() {
     }
     return 0;
 }
+

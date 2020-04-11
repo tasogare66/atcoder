@@ -1,3 +1,4 @@
+//https://atcoder.jp/contests/abc077/tasks/arc084_a
 //AtCoder ABC077 C - Snuke Festival
 #include <bits/stdc++.h>
 using namespace std;

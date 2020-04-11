@@ -22,6 +22,14 @@ struct modint{
         }
         return res;
     }
+    static modint nCr(ll n, ll r){
+        modint a(1),b(1);
+        for(ll i=0;i<r;++i){
+            a *= (n-i);
+            b *= (i+1);
+        }
+        return a/b;
+    }
     template<typename T>
     modint& operator=(T t){t %= (T)M; if(t < 0) t += (T)M; val = t; return *this;}
     modint inv() const {return pow(M-2);}

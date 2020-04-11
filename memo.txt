@@ -1,6 +1,21 @@
+2020-03-07	tasogare66
+
+	* LCS:
+	educational_dp_f
+	https://atcoder.jp/contests/dp/tasks/dp_f
+	文字列の復元も含む
+
+	ALDS1_10_C.cpp
+	省略していない
+    //max | dp[i][j]=dp[i-1][j-1]+1, 文字が同じとき
+    //max | dp[i][j]=dp[i-1][j]
+    //max | dp[i][j]=dp[i][j-1]
+	http://www.cs.t-kougei.ac.jp/SSys/LCS.htm
+	http://nocotan.github.io/%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0/2017/01/23/lcs-copy.html
+
 2019-09-09  tasogare66
 
-	* libalgo
+	* libalgo:
 	https://tubo28.me/compprog/algorithm/
 	https://inzkyk.github.io/algorithms/
 
@@ -47,6 +62,7 @@
 	https://freestylewiki.xyz/fswiki/wiki.cgi?page=%E5%8B%95%E7%9A%84%E8%A8%88%E7%94%BB%E6%B3%95%EF%BC%88%E6%A1%81%EF%BC%A4%EF%BC%B0%EF%BC%89
 	abc007_d.cpp
 	abc129_e.cpp 2進数のやつ
+	abc154_e.cpp
 
 2019-05-27  tasogare66
 

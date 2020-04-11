@@ -27,3 +27,16 @@ int main() {
     cout<<a<<" "<<b<<endl;
     return 0;
 }
+#if 0//2回目
+int main() {
+  ll A,B,K; cin>>A>>B>>K;
+  ll a=A,b=B;
+  a = max(A-K,0LL);
+  K -= A;  
+  if (K>0) {
+    b = max(B-K,0LL);
+  }
+  cout<<a<<" "<<b<<endl;
+  return 0;
+}
+#endif

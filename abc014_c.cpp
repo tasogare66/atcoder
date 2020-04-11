@@ -1,4 +1,6 @@
+//https://atcoder.jp/contests/abc014/tasks/abc014_3
 //ABC014 C - AtColor
+//C - AtColor
 #include <bits/stdc++.h>
 using namespace std;
 int main() {

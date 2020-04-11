@@ -9,7 +9,45 @@ using namespace std;
 using ll=int64_t;
 #define FOR(i,a,b) for(int64_t i=(a);i<(b);++i)
 #define REP(i,n)  FOR(i,0,n)
+
 int main() {
+#if LOCAL&01
+    //std::ifstream in("./test/sample-1.in");
+    std::ifstream in("./input.txt");
+    std::cin.rdbuf(in.rdbuf());
+#else
+    cin.tie(0);
+    ios::sync_with_stdio(false);
+#endif
+    ll N,M; cin>>N>>M;
+    vector<ll> pn(N);
+    for(auto&& p:pn) cin>>p;
+    pn.emplace_back(0); //未選択いれる
+    //2投分合わせた得点を全列挙
+    vector<ll> pn2; pn2.reserve((N+1)*(N+1));
+    for(auto&& p:pn){
+        for(auto&& p2:pn){
+            pn2.emplace_back(p+p2);
+        }
+    }
+    sort(pn2.begin(),pn2.end());    
+
+    ll ans=0;
+    for(const auto& p:pn2){
+        ll tmp=M-p;
+        if(tmp<0)break;
+        auto it = upper_bound(pn2.begin(),pn2.end(),tmp);
+        ll ttl = p;
+        if(*it!=0) ttl += *(it-1);
+        //dump(p,ttl,*it);
+        ans = max(ans, ttl);
+    }
+    cout<<ans<<endl;
+    return 0;
+}
+
+//2分探索partがおかしいよね
+int main_() {
 #if LOCAL&01
     std::ifstream in("./input.txt"); //input.txt
     std::cin.rdbuf(in.rdbuf());

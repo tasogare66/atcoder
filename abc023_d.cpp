@@ -1,4 +1,5 @@
 //https://atcoder.jp/contests/abc023/tasks/abc023_d
+//D - 射撃王
 #include <bits/stdc++.h>
 using namespace std;
 using ll=int64_t;

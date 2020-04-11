@@ -1,14 +1,34 @@
 //https://atcoder.jp/contests/abc134/tasks/abc134_e
+//E - Sequence Decomposing
 #include <bits/stdc++.h>
 using namespace std;
 using ll=int64_t;
 #define FOR(i,a,b) for(int64_t i=(a);i<(b);++i)
 #define REP(i,n)  FOR(i,0,n)
+
+int main() {
+  ll N; cin>>N;
+  vector<ll> an(N);
+  for(auto&& a:an) cin>>a;
+  multiset<ll> lis;
+  for(const auto& a:an){
+    auto it = lis.lower_bound(a);
+    if(it != lis.begin()){
+      --it;
+      lis.erase(it);
+    }
+    lis.insert(a);
+  }
+  //dump(lis);
+  cout<<lis.size()<<endl;
+  return 0;
+}
+
 struct Dat{
     ll v;
     ll pos;
 };
-int main() {
+int main_() {
 #if LOCAL&01
     std::ifstream in("./test/sample-1.in"); //input.txt
     std::cin.rdbuf(in.rdbuf());

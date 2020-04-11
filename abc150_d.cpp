@@ -16,6 +16,29 @@ ll lcm(ll num1,ll num2){
     return num1 / __gcd(num1,num2) * num2;
 }
 
+#if 0 //2回目
+  ll N,M; cin>>N>>M;
+  vector<ll> an(N);
+  ll lcmv=1;
+  for(auto&a:an){
+    cin>>a;
+    lcmv=lcm(lcmv,a/2); //a/2(2p+1)なので、a/2のlcmの奇数の数
+  }
+  FOR(i,0,an.size()){
+    ll tmp=lcmv/(an.at(i)/2);
+    if(tmp%2==0){ //さらに2でわれるとだめ、残り奇数だけのため
+      cout<<0<<endl;
+      return 0;
+    }
+  }
+
+  ll ans=M/lcmv;
+  ans = (ans+1)/2; //奇数の数
+  cout<<ans<<endl;
+
+  return 0;
+#endif
+
 int main() {
 #if LOCAL&01
     //std::ifstream in("./test/sample-2.in"); //input.txt
