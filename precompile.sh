@@ -9,7 +9,7 @@ header_dir=`dirname "$header_file"`
 [ ! -d "$header_dir" ] && mkdir -p "$header_dir" || :
  
 echo "#include <$header_base>" > "$header_file" \
-  && g++ -std=c++1y -g -O0 -x c++-header "$header_file" -o "$header_file.gch" \
+  && g++ -std=c++17 -g -O0 -x c++-header "$header_file" -o "$header_file.gch" \
   && rm "$header_file"
 
 #g++ -std=c++1y -g -O0 -fsanitize=undefined -x c++-header bits/stdc++.h

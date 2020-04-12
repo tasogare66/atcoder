@@ -209,4 +209,7 @@
 	sudo apt install python3-pip
 	sudo pip3 install online-judge-tools
 
+	更新は、
+	sudo pip3 install -U online-judge-tools
+
 以上

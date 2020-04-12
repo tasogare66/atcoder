@@ -4,6 +4,8 @@ CC = "g++"
 CPP_SRC = "#{ENV['CPP_SRC']}"   #入力src
 TEST_LOG = "./test/log_url"
 TEST_OUT = "test.out"
+TOOL_DIR = "./tools"
+LIB_DIR = "./lib"
 
 def get_url_from_src(fname)
   url=""
@@ -47,7 +49,7 @@ end
 
 desc "テスト用の実行ファイルのビルド"
 file "test.out" => "#{CPP_SRC}" do
-  sh "#{CC} -std=c++17 -O0 -g -I.cache/cxxpch #{CPP_SRC} -o #{TEST_OUT}"
+  sh "#{CC} -std=c++17 -O0 -g -I.cache/cxxpch -I. #{CPP_SRC} -o #{TEST_OUT}"
 end
 
 
@@ -55,4 +57,10 @@ desc "ソースファイ提出,CPP_SRC=abc000_a.cpp"
 task :submit do
   url=get_url_from_src(CPP_SRC)
   sh "oj submit #{url} #{CPP_SRC}"
+end
+
+
+desc "snippetの作成,更新"
+task :make_snippet do
+  sh "#{TOOL_DIR}/make_snippet.rb #{LIB_DIR}/template_base.cpp #{LIB_DIR}"
 end

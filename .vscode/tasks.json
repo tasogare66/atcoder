@@ -17,7 +17,7 @@
                 "-DLOCAL",
                 "-Wshadow",
                 "-Wempty-body",
-                "-I.cache/cxxpch",
+                "-I.cache/cxxpch", "-I.",
                 "$(wslpath '${file}')",
                 //"`wslpath '${file}'`",
                 //"-H", //使用される個々のヘッダ・ファイルを表示
