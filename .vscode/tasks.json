@@ -15,6 +15,7 @@
                 "-g",
                 //"-fsanitize=undefined",
                 "-DLOCAL",
+                "-Wall",
                 "-Wshadow",
                 "-Wempty-body",
                 "-I.cache/cxxpch", "-I.",

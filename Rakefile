@@ -62,5 +62,5 @@ end
 
 desc "snippetの作成,更新"
 task :make_snippet do
-  sh "#{TOOL_DIR}/make_snippet.rb #{LIB_DIR}/template_base.cpp #{LIB_DIR}"
+  sh "#{TOOL_DIR}/make_snippet.rb #{LIB_DIR}/template_base.cpp #{LIB_DIR} .vscode/cpp.code-snippets"
 end

@@ -1,4 +1,3 @@
-{
 	// Place your snippets for cpp here. Each snippet is defined under a snippet name and has a prefix, body and 
 	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
 	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
@@ -12,145 +11,130 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-	"main function": {
-		"prefix": "m",
-		"body": [
-			"//$1",
-			"#include <bits/stdc++.h>",
-			"#if LOCAL",
-			"#include \"dump.hpp\"",
-			"#else",
-			"#define dump(...)",
-			"#endif",
-			"using namespace std;",
-			"using ll=long long;",
-			"const ll LINF = 0x1fffffffffffffff;",
-			"#define FOR(i,a,b) for(ll i=(a);i<(b);++i)",
-			"#define REP(i,n) FOR(i,0,n)",
-			"template<class T>bool chmax(T &a, const T &b) {if (a<b) { a=b; return 1; } return 0;}",
-			"template<class T>bool chmin(T &a, const T &b) {if (b<a) { a=b; return 1; } return 0;}",
-			"int main() {",
-			"  ",
-			"  return 0;",
-			"}"
-		],
-		"description": "main function"
-	},
-	"input_text": {
-		"prefix": "input",
-		"body": [
-			"#if LOCAL&01",
-			"	std::ifstream in(\"./test/sample-1.in\");",
-			"	//std::ifstream in(\"./input.txt\");",
-			"	std::cin.rdbuf(in.rdbuf());",
-			"#else"
-			"\tcin.tie(0);",
-			"\tios::sync_with_stdio(false);",
-			"#endif",
-		],
-		"description": "input text"
-	},
-	"mod primary": {
-		"prefix": "mod",
-		"body": [
-			"constexpr ll MOD=1e9+7;",
-		],
-		"description": "mod primary number"
-	},
-	"string split": {
-		"prefix": "split",
-		"body": [
-			"std::vector<std::string> split(const std::string& input, char delimiter){",
-			"	std::istringstream stream(input);",
-			"	std::string field;",
-			"	std::vector<std::string> result;",
-			"	while (std::getline(stream, field, delimiter)) {",
-			"		result.push_back(field);",
-			"	}",
-			"	return result;",
-			"}",
-		],
-		"description": "string split"
-	},
-	"least common multiple": {
-		"prefix": "lcm",
-		"body": [
-			"ll lcm(ll num1,ll num2){",
-			"	return num1 / __gcd(num1,num2) * num2;",
-			"}",
-		],
-		"description": "least common multiple"
-	},
-	"cout for float": {
-		"prefix": "cout_float",
-		"body": [
-			"cout<<fixed<<std::setprecision(10)",
-		],
-		"description": "float用のcout"
-	},
-	"debug dump": {
-		"prefix": "dump",
-		"body": [
-			"#if LOCAL",
-			"#include \"dump.hpp\"",
-			"#else",
-			"#define dump(...)",
-			"#endif",
-		],
-		"description": "debug dump"
-	},
-	"combination": {
-		"prefix": "combination",
-		"body": [
-			"void recursive_comb(vector<ll>& indexes, ll s, ll rest, std::function<void(vector<ll>&)> f) {",
-			"	if (rest == 0) {",
-			"		f(indexes);",
-			"	} else {",
-			"		if (s < 0) return;",
-			"		recursive_comb(indexes, s - 1, rest, f);",
-			"		indexes.at(rest - 1) = s;",
-			"		recursive_comb(indexes, s - 1, rest - 1, f);",
-			"	}",
-			"}",
-			"// nCkの組み合わせに対して処理を実行する",
-			"void foreach_comb(ll n, ll k, std::function<void(vector<ll>&)> f) {",
-			"	vector<ll> indexes(k);",
-			"	recursive_comb(indexes, n - 1, k, f);",
-			"}",
-			"//foreach_comb(N-1, 2, [&](vector<ll>& indexes) {",
-			"//    dump(indexes[0],indexes[1]);",
-			"//});",
-		],
-		"description": "nCkの組み合わせ列挙"
-	},
-	"matrix": {
-		"prefix": "matrix",
-		"body": [
-			"template< typename T >",
-			"using Matrix = vector< vector< T > >;",
-			"template< typename T>",
-			"Matrix<T> make_matrix(ll y, ll x, T v={}){",
-			"	return Matrix<T>(y, vector<T>(x,v));",
-			"}",
-		],
-		"description": "matrix vector2重配列"
-	},
-	"deg2rad": {
-		"prefix": "deg2rad",
-		"body": [
-			"double deg2rad(double deg){",
-			"	return deg*M_PI/180.0;",
-			"}",
-		],
-		"description": "degree to radian"
-	},
-	"rad2deg": {
-		"prefix": "rad2deg",
-		"body": [
-			"double rad2deg(double rad){",
-			"	return rad*180.0/M_PI;",
-			"}",
-		],
-		"description": "radian to degree"
-	},
+{
+  "main function": {
+    "body": [
+      "//$1",
+      "#include <bits/stdc++.h>",
+      "#if LOCAL",
+      "#include \"dump.hpp\"",
+      "#else",
+      "#define dump(...)",
+      "#endif",
+      "using namespace std;",
+      "using ll=long long;",
+      "const ll LINF = 0x1fffffffffffffff;",
+      "#define FOR(i,a,b) for(ll i=(a);i<(b);++i)",
+      "#define REP(i,n) FOR(i,0,n)",
+      "template<class T>bool chmax(T &a, const T &b) {if (a<b) { a=b; return 1; } return 0;}",
+      "template<class T>bool chmin(T &a, const T &b) {if (b<a) { a=b; return 1; } return 0;}",
+      "int main() {",
+      "  ",
+      "  return 0;",
+      "}"
+    ],
+    "prefix": "m",
+    "description": "main function"
+  },
+  "input_text": {
+    "body": [
+      "#if LOCAL&01",
+      "  std::ifstream in(\"./test/sample-1.in\");",
+      "  //std::ifstream in(\"./input.txt\");",
+      "  std::cin.rdbuf(in.rdbuf());",
+      "#else",
+      "  cin.tie(0);",
+      "  ios::sync_with_stdio(false);",
+      "#endif"
+    ],
+    "prefix": "input",
+    "description": "input text"
+  },
+  "cout for float": {
+    "body": [
+      "  cout<<fixed<<std::setprecision(10)"
+    ],
+    "prefix": "cout_float",
+    "description": "float用のcout"
+  },
+  "mod primary": {
+    "body": [
+      "constexpr ll MOD=1e9+7;"
+    ],
+    "prefix": "mod",
+    "description": "mod primary number"
+  },
+  "string split": {
+    "body": [
+      "std::vector<std::string> split(const std::string& input, char delimiter){",
+      "  std::istringstream stream(input);",
+      "  std::string field;",
+      "  std::vector<std::string> result;",
+      "  while (std::getline(stream, field, delimiter)) {",
+      "    result.push_back(field);",
+      "  }",
+      "  return result;",
+      "}"
+    ],
+    "prefix": "split",
+    "description": "string split"
+  },
+  "least common multiple": {
+    "body": [
+      "ll lcm(ll num1,ll num2){",
+      "  //return num1 / __gcd(num1,num2) * num2;",
+      "  return num1 / std::gcd(num1,num2) * num2;",
+      "}"
+    ],
+    "prefix": "lcm",
+    "description": "least common multiple"
+  },
+  "combination": {
+    "body": [
+      "void recursive_comb(vector<ll>& indexes, ll s, ll rest, std::function<void(vector<ll>&)> f) {",
+      "  if (rest == 0) {",
+      "    f(indexes);",
+      "  } else {",
+      "    if (s < 0) return;",
+      "    recursive_comb(indexes, s - 1, rest, f);",
+      "    indexes.at(rest - 1) = s;",
+      "    recursive_comb(indexes, s - 1, rest - 1, f);",
+      "  }",
+      "}",
+      "// nCkの組み合わせに対して処理を実行する",
+      "void foreach_comb(ll n, ll k, std::function<void(vector<ll>&)> f) {",
+      "  vector<ll> indexes(k);",
+      "  recursive_comb(indexes, n - 1, k, f);",
+      "}",
+      "//foreach_comb(N-1, 2, [&](vector<ll>& indexes) {",
+      "//  dump(indexes[0],indexes[1]);",
+      "//});"
+    ],
+    "prefix": "combination",
+    "description": "nCkの組み合わせ列挙"
+  },
+  "matrix": {
+    "body": [
+      "template< typename T >",
+      "using Matrix = vector< vector< T > >;",
+      "template< typename T>",
+      "Matrix<T> make_matrix(ll y, ll x, T v={}){",
+      "\treturn Matrix<T>(y, vector<T>(x,v));",
+      "}"
+    ],
+    "prefix": "matrix",
+    "description": "matrix vector2重配列"
+  },
+  "deg2rad": {
+    "body": [
+      "double deg2rad(double deg){",
+      "  return deg*M_PI/180.0;",
+      "}",
+      "double rad2deg(double rad){",
+      "  return rad*180.0/M_PI;",
+      "}"
+    ],
+    "prefix": "deg2rad",
+    "description": "degree to radian, radian to degree"
+  }
 }
