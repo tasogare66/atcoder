@@ -5,6 +5,10 @@ using ll=long long;
 
 #if 01 //こっち,下は負の値のコンストラクタない
 //https://firiexp.github.io/library/library/modint.html
+//##template
+//key:modint
+//prefix:modint
+//description:MODした値を保持する整数
 template<uint32_t M = 1000000007>
 struct modint{
     using u64 = std::uint_fast64_t;
@@ -52,6 +56,9 @@ struct modint{
         return os;
     }
 };
+constexpr ll MOD=1e9+7;
+using mint = modint<MOD>;
+//##
 #else
 template <std::uint_fast64_t Modulus> class modint {
     using u64 = std::uint_fast64_t;
@@ -106,10 +113,9 @@ public:
         return os;
     }
 };
-#endif
-
 constexpr ll MOD=1e9+7;
 using mint = modint<MOD>;
+#endif
 
 int main() {
     {

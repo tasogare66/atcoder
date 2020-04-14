@@ -69,8 +69,19 @@ def parse_c_src(fpath, result)
   return result
 end
 
+def parse_dir_c_src(dir_path,result)
+  dir_entries = Dir.glob(dir_path + "/" + "**/*")
+  dir_entries.each do |fn|
+    if fn =~/\.cpp$|\.hpp$/ then
+      parse_c_src(fn, result)
+    end
+  end
+end
+
 out_hash=Hash::new
-parse_c_src(template_base, out_hash)
+#parse_c_src(template_base, out_hash)
+parse_dir_c_src(lib_dir, out_hash)
+
 File.open(out_file,"w") {|file|
   file.print <<EOS
 	// Place your snippets for cpp here. Each snippet is defined under a snippet name and has a prefix, body and 
