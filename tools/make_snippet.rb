@@ -5,9 +5,13 @@ exec ruby -S -x $0 "$@"
 # snippetのjsonを作る
 require 'json'
 
-template_base=ARGV[0]
-lib_dir=ARGV[1]
-out_file=ARGV[2]
+if ARGV.size < 3
+  STDERR.print "Usage: #{$0} template_base src_dir output\n"
+  exit
+end
+template_base=ARGV[0] #使ってない
+lib_dir=ARGV[1] #dir以下のファイルをすべて登録する
+out_file=ARGV[2] #snippetのjson,出力ファイル
 
 def err_exit(msg)
   STDERR.print("\e[31m" + msg + "\e[0m" + "\n")
